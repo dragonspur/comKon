@@ -1,4 +1,6 @@
 ComKon::Application.routes.draw do
+  resources :posts
+
   devise_for :users
 
   get "pages/home"
