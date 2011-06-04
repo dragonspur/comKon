@@ -12,8 +12,8 @@
 <body>
 
 <div class="container">
-<div class="span-5"/>
-<div class="span-12 last" id="user_nav">
+<div class="span-5 "> &nbsp;  </div>
+<div class="span-17 last">
 <% if user_signed_in? %>
 Signed in as <%= current_user.email %>.
 Not you? <%= link_to "Sign out", destroy_user_session_path %>
@@ -22,10 +22,8 @@ Not you? <%= link_to "Sign out", destroy_user_session_path %>
  <%= link_to "Sign in", new_user_session_path %> 
 <% end %>
 </div>
-<div class="span-5"/>
-<div class="span-12">
+<div class="span-24 last border">
 <%= yield %>
 </div>
-<div class="span-5 last"/>
 </body>
 </html>
