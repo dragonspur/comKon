@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %title ComKon
+    = stylesheet_link_tag :all
+    = javascript_include_tag :defaults, :ckeditor
+    = stylesheet_link_tag 'blueprint/screen', :media => 'screen'
+    = stylesheet_link_tag 'blueprint/print', :media => 'print'
+    = csrf_meta_tag
+  %body
+    .container
+      .span-5 &nbsp;
+      .span-17.last
+        - if user_signed_in?
+          Signed in as #{current_user.email}.
+          Not you? #{link_to "Sign out", destroy_user_session_path}
+        - else
+          = link_to "Sign up", new_user_registration_path
+          or
+          \#{link_to "Sign in", new_user_session_path}
+      .span-24.last.border
+        = yield

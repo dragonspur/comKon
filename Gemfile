@@ -9,6 +9,7 @@ gem 'mysql2'
 gem 'devise'
 gem 'paperclip'
 gem 'ckeditor'
+gem 'haml-rails'
 
 
 # Use unicorn as the web server
@@ -35,6 +36,8 @@ gem 'ckeditor'
 # end
 group :development do
 gem 'rspec-rails'
+gem 'hpricot'
+gem 'ruby_parser'
 end
 group :test do
 gem 'rspec' 
