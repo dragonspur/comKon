@@ -1,4 +1,6 @@
 ComKon::Application.routes.draw do
+  get "calendar/index"
+
   resources :events
 
   resources :posts
