@@ -9,6 +9,7 @@ gem 'mysql2'
 gem 'devise'
 gem 'paperclip'
 gem 'ckeditor'
+gem 'jquery-rails'
 
 
 # Use unicorn as the web server

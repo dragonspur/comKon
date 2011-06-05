@@ -1,4 +1,6 @@
 ComKon::Application.routes.draw do
+  resources :events
+
   resources :posts
 
   devise_for :users
