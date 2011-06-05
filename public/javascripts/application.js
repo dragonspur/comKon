@@ -5,3 +5,10 @@ $.ajaxSetup({
     xhr.setRequestHeader("Accept", "text/javascript");
   }
 });
+
+
+$(document).ready(function(){
+//$("#event_starts_at").datepicker({ altField: 'input#date', altFormat: 'yy-mm-dd' });
+$("#event_starts_at").datetimepicker();
+$("#event_ends_at").datetimepicker();
+});
