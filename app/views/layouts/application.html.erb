@@ -22,15 +22,21 @@
 <body>
 
 <div class="container">
-<div class="span-5 "> &nbsp;  </div>
+<div class="span-5 "> 
+	<%= link_to 'Calendar', calendar_index_path %> 
+	<%= link_to 'Posts', posts_path %> 
+	<%= link_to 'Events', events_path %>
+</div>
 <div class="span-17 last">
-<% if user_signed_in? %>
-Signed in as <%= current_user.email %>.
-Not you? <%= link_to "Sign out", destroy_user_session_path %>
-<% else %>
- <%= link_to "Sign up", new_user_registration_path %> or
- <%= link_to "Sign in", new_user_session_path %> 
-<% end %>
+	<% if user_signed_in? %>
+		<%= current_user.email %>.
+		Not you? <%= link_to "Sign out", destroy_user_session_path %>
+		<% else %>
+ 			<%= link_to "Sign up", new_user_registration_path %> or
+ 			<%= link_to "Sign in", new_user_session_path %> 
+	<% end %>
+</div>
+<div class= "span-24 last"> <br/>
 </div>
 <div class="span-24 last border">
 <%= yield %>

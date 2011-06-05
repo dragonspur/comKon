@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name
   has_many :posts, :dependent => :destroy
+  has_many :events, :dependent => :destroy
 end
