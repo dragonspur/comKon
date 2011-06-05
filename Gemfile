@@ -10,6 +10,7 @@ gem 'devise'
 gem 'paperclip'
 gem 'ckeditor'
 gem 'jquery-rails'
+gem 'haml-rails'
 
 
 # Use unicorn as the web server
@@ -36,6 +37,8 @@ gem 'jquery-rails'
 # end
 group :development do
 gem 'rspec-rails'
+gem 'hpricot'
+gem 'ruby_parser'
 end
 group :test do
 gem 'rspec' 
