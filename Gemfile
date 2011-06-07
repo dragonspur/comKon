@@ -37,8 +37,8 @@ gem 'haml-rails'
 # end
 group :development do
 gem 'rspec-rails'
-#gem 'hpricot'
-#gem 'ruby_parser'
+gem 'hpricot'
+gem 'ruby_parser'
 end
 group :test do
 gem 'rspec' 
