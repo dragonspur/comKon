@@ -2,6 +2,8 @@ ComKon::Application.routes.draw do
   get "calendar/index"
 
   resources :events
+  
+  
 
   resources :posts
 
@@ -12,6 +14,8 @@ ComKon::Application.routes.draw do
   get "pages/contact"
 
   resources :users
+  
+  match "/users/create" => 'users#create'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
