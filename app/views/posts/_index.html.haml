@@ -11,6 +11,10 @@
     - if user_signed_in?
       %tr
         %td= link_to 'Show', post
-        %td= link_to 'Edit', edit_post_path(post)
-        %td= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete
+        -if can? :update, post 
+          %td= link_to 'Edit', edit_post_path(post)
+          %td= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete
+        -else
+          %td
+          %td
 %br/

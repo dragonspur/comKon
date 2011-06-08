@@ -17,7 +17,10 @@
       %td= event.all_day
       %td= raw event.description
       %td= link_to 'Show', event
-      %td= link_to 'Edit', edit_event_path(event)
+      -if can? :update,event
+        %td= link_to 'Edit', edit_event_path(event)
+      -else
+        %td
       %td= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete
 %br/
 = link_to 'New Event', new_event_path
