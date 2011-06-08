@@ -13,5 +13,8 @@ class User < ActiveRecord::Base
   def role?(role)
         return  !!self.roles.find_by_name(role)
   end
+  def owner?(obj)
+	return !!(obj.try(:user_id) == self.id)
+  end
 
 end
