@@ -11,6 +11,7 @@ gem 'paperclip'
 gem 'ckeditor'
 gem 'jquery-rails'
 gem 'haml-rails'
+gem 'cancan'
 
 
 # Use unicorn as the web server

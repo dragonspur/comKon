@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_filter :authenticate_user!
+  load_and_authorize_resource
   # GET /events
   # GET /events.xml
   def index   
@@ -36,7 +38,8 @@ class EventsController < ApplicationController
   # GET /events/new
   # GET /events/new.xml
   def new
-    @event = Event.new
+    #@event = Event.new
+    @event = current_user.events.new
 
     respond_to do |format|
       format.html # new.html.erb

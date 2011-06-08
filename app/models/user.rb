@@ -8,4 +8,10 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :time_zone
   has_many :posts, :dependent => :destroy
   has_many :events, :dependent => :destroy
+  has_many :user_roles, :dependent => :destroy
+  has_many :roles ,:through=> :user_roles
+  def role?(role)
+        return  !!self.roles.find_by_name(role)
+  end
+
 end

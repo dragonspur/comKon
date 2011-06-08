@@ -1,4 +1,8 @@
 ComKon::Application.routes.draw do
+  resources :user_roles
+
+  resources :roles
+
   get "calendar/index"
 
   resources :events
