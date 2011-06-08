@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(:version => 20110607175429) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "timezone"
     t.string   "time_zone"
   end
 
