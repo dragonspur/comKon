@@ -8,7 +8,7 @@ class Ability
         if user.role? :admin
          can :manage, :all
         else
-         can [:read,:create], :all
+         can [:read,:create], [Event,Post] 
          can [:update,:destroy], [Event,Post] , :user_id=> user.id
         end
     #
