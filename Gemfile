@@ -13,6 +13,9 @@ gem 'ckeditor'
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'cancan'
+gem 'therubyracer'                 
+gem 'barista'
+
 
 
 # Use unicorn as the web server
