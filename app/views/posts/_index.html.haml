@@ -2,18 +2,18 @@
   = link_to 'New Post', new_post_path
 %table
   - @posts.each do |post|
-    %tr
+    %tr[post,"title"]
       %td{:colspan => "2"}
         %h3= raw post.title
       %td= post.updated_at
-    %tr
+    %tr[post,"content"]
       %td{:colspan => "3"}= raw post.content
     - if user_signed_in?
-      %tr
+      %tr[post,"menu"]
         %td= link_to 'Show', post
         -if can? :update, post 
           %td= link_to 'Edit', edit_post_path(post)
-          %td= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete
+          %td= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete ,:remote=> true
         -else
           %td
           %td

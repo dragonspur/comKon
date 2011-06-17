@@ -13,8 +13,6 @@ gem 'ckeditor'
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'cancan'
-gem 'therubyracer'                 
-gem 'barista'
 
 
 
@@ -43,6 +41,8 @@ gem 'barista'
 group :development do
 gem 'rspec-rails'
 gem 'hpricot'
+gem 'therubyracer'                 
+gem 'barista'
 gem 'ruby_parser'
 end
 group :test do
