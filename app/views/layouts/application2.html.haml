@@ -1,0 +1,43 @@
+!!!
+%html
+  %head
+    %title ComKon
+    = stylesheet_link_tag :all
+    = javascript_include_tag :defaults, :ckeditor
+    = stylesheet_link_tag 'blueprint/screen', :media => 'screen'
+    = stylesheet_link_tag 'blueprint/print', :media => 'print'
+    = stylesheet_link_tag 'ui-lightness/jquery-ui-1.8.13.custom', :media => 'screen'
+    /= javascript_include_tag "jquery.rest.js"
+    / these are needed for the calendar.
+    = javascript_include_tag "jquery-ui-1.8.13.custom.min.js"
+    = javascript_include_tag "fullcalendar.js"
+    = javascript_include_tag "calendar.js"
+    = javascript_include_tag "jquery-ui-timepicker-addon.js"
+    = javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery?
+    = csrf_meta_tag
+  %body
+    .nav
+      .container
+        .spane-5
+          - if user_signed_in?
+	          = link_to 'Calendar', calendar_index_path
+	          = link_to 'Posts', posts_path
+	          = link_to 'Events', events_path
+	          -if current_user.role? :admin
+	            =link_to 'Admin', users_path
+        .span-17.last
+           - if user_signed_in?
+			   = current_user.email
+			          \.
+			          Not you? #{link_to "Sign out", destroy_user_session_path}
+			        - else
+			          = link_to "Sign up", new_user_registration_path
+			          or
+			          \#{link_to "Sign in", new_user_session_path}
+    .container
+     
+      
+      .span-24.las
+        %br/
+      .span-24.last.border
+        = yield
