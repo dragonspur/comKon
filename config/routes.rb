@@ -1,4 +1,6 @@
 ComKon::Application.routes.draw do
+  resources :communities
+
   resources :user_roles
 
   resources :roles

@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
   has_many :events, :dependent => :destroy
   has_many :user_roles, :dependent => :destroy
   has_many :roles ,:through=> :user_roles
+  has_many :user_communities, :dependent => :destroy
+  has_many :communities ,:through=> :user_communities
+  
+  
   def role?(role)
         return  !!self.roles.find_by_name(role)
   end
