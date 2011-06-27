@@ -45,8 +45,19 @@ class PostsController < ApplicationController
   def create
     #@post = Post.new(params[:post])
     @post = current_user.posts.new(params[:post])
+    @ids = params[:post][:community_ids]
+    
+  
+    
     respond_to do |format|
       if @post.save
+        @ids.each do |idd| 
+          if  not  idd.empty?
+          RAILS_DEFAULT_LOGGER.debug idd 
+          @post.community_posts.create(:community_id=>idd)
+        end
+        end
+        
         format.html { redirect_to(@post, :notice => 'Post was successfully created.') }
         format.xml  { render :xml => @post, :status => :created, :location => @post }
       else

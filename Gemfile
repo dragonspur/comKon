@@ -13,6 +13,7 @@ gem 'ckeditor'
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'cancan'
+gem 'simple_form'
 
 
 

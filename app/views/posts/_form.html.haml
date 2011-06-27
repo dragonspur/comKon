@@ -1,4 +1,4 @@
-= form_for(@post) do |f|
+= simple_form_for(@post) do |f|
   - if @post.errors.any?
     #error_explanation
       %h2
@@ -19,5 +19,10 @@
     = f.label "Access:"
     %br/
     = f.select :accessmode, [["Private",0],["Public",1]]
+  .field
+  
+    = f.association :communities,   :as => :check_boxes
   .actions
     = f.submit
+
+   
